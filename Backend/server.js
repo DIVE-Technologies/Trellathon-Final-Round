@@ -76,6 +76,25 @@ app.post('/upload', upload, async (req, res) => {
 
 });
 
+app.get("/all-videos", async (req, res) => {
+    const videos = await UploadVideos.find({});
+    res.send(videos);
+})
+
+app.get("/search/trending", function (req, res) {
+    var regex = new RegExp(req.params.tags, 'i')
+    UploadVideos.find({ tags: regex }).then((result) => {
+        res.status(200).json(result)
+    })
+})
+
+app.get("/search/:location", function (req, res) {
+    var regex = new RegExp(req.params.location, 'i')
+    UploadVideos.find({ location: regex }).then((result) => {
+        res.status(200).json(result)
+    })
+})
+
 const port = process.env.USER_PORT
 app.listen(port, () => {
     console.log('Server listening on port ' + port);
