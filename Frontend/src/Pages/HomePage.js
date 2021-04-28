@@ -1,7 +1,6 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import MapView, {Marker, Heatmap} from 'react-native-maps';
-import marker from '../../assets/Artboard 13@3x_Black.png';
 
 class HomePage extends React.Component {
   render() {
@@ -22,6 +21,7 @@ class HomePage extends React.Component {
             description="This is my Home"
             image={require('../../assets/Artboard 13@3x_Black.png')}
           /> */}
+          <TouchableOpacity onPress={() => console.log('Clicked')}>
           <Heatmap
             style={styles.map}
             radius={50}
@@ -44,6 +44,7 @@ class HomePage extends React.Component {
                 colorMapSize: 200
             }}
           />
+          </TouchableOpacity>
         </MapView>
       </View>
     );
