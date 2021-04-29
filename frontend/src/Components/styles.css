@@ -1,5 +1,36 @@
 .drawer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: gray;
+    padding: 40px;
 }
+
+.inputField {
+    border: 1px solid gray;
+    border-radius: 40px;
+    outline: none;
+    color: gray;
+    margin: 0 40px;
+}
+
+.videoPlayer {
+    border-radius: 20px !important;
+    width: 40% !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+/* .videoPlayer {
+    display: flex !important;
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+.video-react-big-play-button-left {
+    display: flex !important;
+    text-align: center !important;
+    justify-content: center !important;
+} */

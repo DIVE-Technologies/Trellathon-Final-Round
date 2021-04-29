@@ -1,9 +1,8 @@
 import { Component } from "react";
 import { GoogleApiWrapper, Map, HeatMap } from "google-maps-react";
-// import env from 'react-dotenv';
-import '../Components/styles.css';
-
-// console.log(env.GOOGLE_APIKEY)
+import "../Components/styles.css";
+import TrendingVideos from "../Components/TrendingVideos";
+import ShowVideo from "../Components/ShowVideo";
 
 const gradient = [
   "rgba(0, 255, 255, 0)",
@@ -28,17 +27,17 @@ const data = [
   { lat: 28.7043, lng: 77.1027 },
   { lat: 28.7044, lng: 77.1028 },
 
-  { lat: 28.7060, lng: 77.1025 },
+  { lat: 28.706, lng: 77.1025 },
   { lat: 28.7062, lng: 77.1025 },
   { lat: 28.7063, lng: 77.1025 },
   { lat: 28.7064, lng: 77.1025 },
 
-  { lat: 23.7080, lng: 77.1025 },
+  { lat: 23.708, lng: 77.1025 },
   { lat: 23.7081, lng: 77.1025 },
   { lat: 23.7082, lng: 77.1025 },
   { lat: 23.7083, lng: 77.1025 },
 
-  { lat: 28.9100, lng: 77.1025 },
+  { lat: 28.91, lng: 77.1025 },
   { lat: 28.9101, lng: 77.1025 },
   { lat: 28.9102, lng: 77.1025 },
   { lat: 28.9103, lng: 77.1025 },
@@ -50,16 +49,37 @@ const data = [
 ];
 
 export class HomePage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      location: "",
+    };
+  }
+
+  handleLocation = (value) => {
+    this.setState(() => ({
+      location: value,
+    }));
+    console.log(this.state);
+  };
+
   render() {
     return (
-      <div className="container">
-        <div className="row">
+      <div className="container-fluid p-0 m-0">
+        <div className="row m-0">
           <div className="col-2 drawer">
-            <div className='drawer'>Hello</div>
+            <input
+              type="text"
+              className="inputField"
+              placeholder="Search"
+              onChange={(e) => this.handleLocation(e.target.value)}
+            />
+            <ShowVideo />
           </div>
           <div className="col-10">
             <Map
               google={this.props.google}
+              className="map"
               initialCenter={{
                 lat: 28.7041,
                 lng: 77.1025,
@@ -68,6 +88,7 @@ export class HomePage extends Component {
               onClick={this.onMapClicked}
             >
               <HeatMap
+                className="map"
                 gradient={gradient}
                 dissipating={true}
                 positions={data}
@@ -83,6 +104,6 @@ export class HomePage extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyABGpKJdgQQIZW7WCWxgcZbO8gbUbwAdEk',
+  apiKey: "",
   libraries: ["visualization"],
 })(HomePage);
