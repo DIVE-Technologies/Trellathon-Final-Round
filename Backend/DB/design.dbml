@@ -1,0 +1,35 @@
+Table users as U {
+  user_id varchar [pk] // auto-increment
+  full_name varchar
+  created_at timestamp [default: 'now()']
+  loc_id varchar [ref: - locactionDB.loc]
+  followers_count int [default: 0]
+  trails_count int [default: 0]
+}
+
+Table locactionDB{
+  loc varchar [pk]
+  loc_name varchar
+  trails_count int
+}
+
+Table trails {
+  trail_id int [pk]
+  name varchar
+  catalogue_id int
+  user_id varchar [ref: - users.user_id]
+  video varchar
+  location varchar [ref: - locactionDB.loc]
+ }
+
+Table catalogue {
+  catalogue_id int [pk]
+  name varchar
+  cat_desc varchar
+  trail_count int
+}
+
+Table catalogue_trail{
+  catalogue_id int [ref: > catalogue.catalogue_id]
+  trail_id int [ref: > trails.trail_id]
+}
