@@ -63,41 +63,71 @@ export class HomePage extends Component {
     console.log(this.state);
   };
 
+  togglePanel = () => {
+    var panel = document.getElementById("panel");
+    console.log(panel);
+    // panel.style.display === 'block' ? panel.style.display === 'none' : panel.style.display === ' block'
+  };
+
   render() {
     return (
-      <div className="container-fluid p-0 m-0">
-        <div className="row m-0">
-          <div className="col-2 drawer">
-            <input
-              type="text"
-              className="inputField"
-              placeholder="Search"
-              onChange={(e) => this.handleLocation(e.target.value)}
-            />
-            <ShowVideo />
-          </div>
-          <div className="col-10">
-            <Map
-              google={this.props.google}
-              className="map"
-              initialCenter={{
-                lat: 28.7041,
-                lng: 77.1025,
-              }}
-              zoom={15}
-              onClick={this.onMapClicked}
-            >
-              <HeatMap
-                className="map"
-                gradient={gradient}
-                dissipating={true}
-                positions={data}
-                opacity={1}
-                radius={20}
-              />
-            </Map>
-          </div>
+      <div>
+        <Map
+          google={this.props.google}
+          className="map"
+          initialCenter={{
+            lat: 28.7041,
+            lng: 77.1025,
+          }}
+          zoom={10}
+          // style={{ zIndex: -1 }}
+          onClick={this.onMapClicked}
+        >
+          <HeatMap
+            gradient={gradient}
+            dissipating={true}
+            positions={data}
+            opacity={1}
+            radius={20}
+          />
+        </Map>
+        <div
+          // onClick={() => this.togglePanel()}
+          className="Search"
+        >
+          <i class="fa fa-search" aria-hidden="true"></i>
         </div>
+        <div
+          // onClick={() => this.togglePanel()}
+          className="Search"
+        >
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div
+          // onClick={() => this.togglePanel()}
+          className="Search"
+        >
+          <i class="fas fa-film"></i>
+        </div>
+        <div
+          // onClick={() => this.togglePanel()}
+          className="Search"
+        >
+          <i class="fas fa-map-marked-alt"></i>
+        </div>
+        {/* <div className="container-fluid p-0 m-0 panel" id="panel">
+          <div className="row m-0">
+            <div className="col-12 drawer">
+              <input
+                type="text"
+                className="inputField"
+                placeholder="Search"
+                onChange={(e) => this.handleLocation(e.target.value)}
+              />
+              <ShowVideo />
+            </div>
+          </div>
+        </div> */}
       </div>
     );
   }

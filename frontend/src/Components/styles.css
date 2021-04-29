@@ -1,13 +1,15 @@
 .drawer {
     display: flex;
-    text-align: center;
+    /* text-align: center; */
     justify-content: center;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    flex-direction: column;
+    border-top-right-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
     padding: 40px;
 }
 
 .inputField {
+    width: 100%;
     border: 1px solid gray;
     border-radius: 40px;
     outline: none;
@@ -23,14 +25,27 @@
     text-align: center !important;
 }
 
-/* .videoPlayer {
-    display: flex !important;
-    text-align: center !important;
-    justify-content: center !important;
+.map {
+    height: 100% !important;
+    width: 100% !important;
 }
 
-.video-react-big-play-button-left {
-    display: flex !important;
-    text-align: center !important;
-    justify-content: center !important;
-} */
+.panel {
+    z-index: 5 !important;
+    height: 100%;
+    width: 20%;
+    background-color: black;
+}
+
+.Search {
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 1%;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
