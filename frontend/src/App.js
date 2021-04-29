@@ -1,4 +1,3 @@
-import './App.css';
 import GoogleApiWrapper from './Pages/HomePage';
 
 function App() {
