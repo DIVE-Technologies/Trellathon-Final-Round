@@ -1,8 +1,8 @@
 import { Component } from "react";
 import { GoogleApiWrapper, Map, HeatMap } from "google-maps-react";
 import "../Components/styles.css";
-import TrendingVideos from "../Components/TrendingVideos";
-import ShowVideo from "../Components/ShowVideo";
+import { Link } from "react-router-dom";
+import Header from "../Components/Header";
 
 const gradient = [
   "rgba(0, 255, 255, 0)",
@@ -22,25 +22,25 @@ const gradient = [
 ];
 
 const data = [
-  { lat: 28.7041, lng: 77.1025 },
-  { lat: 28.7042, lng: 77.1026 },
-  { lat: 28.7043, lng: 77.1027 },
-  { lat: 28.7044, lng: 77.1028 },
+  { lat: 28.70, lng: 77.10 },
+  { lat: 28.70, lng: 77.10 },
+  { lat: 28.70, lng: 77.10 },
+  { lat: 28.70, lng: 77.10 },
 
-  { lat: 28.706, lng: 77.1025 },
-  { lat: 28.7062, lng: 77.1025 },
-  { lat: 28.7063, lng: 77.1025 },
-  { lat: 28.7064, lng: 77.1025 },
+  { lat: 28.70, lng: 77.10 },
+  { lat: 28.70, lng: 77.10 },
+  { lat: 28.70, lng: 77.10 },
+  { lat: 28.70, lng: 77.10 },
 
-  { lat: 23.708, lng: 77.1025 },
-  { lat: 23.7081, lng: 77.1025 },
-  { lat: 23.7082, lng: 77.1025 },
-  { lat: 23.7083, lng: 77.1025 },
+  { lat: 23.70, lng: 77.10 },
+  { lat: 23.70, lng: 77.10 },
+  { lat: 23.70, lng: 77.10 },
+  { lat: 23.70, lng: 77.10 },
 
-  { lat: 28.91, lng: 77.1025 },
-  { lat: 28.9101, lng: 77.1025 },
-  { lat: 28.9102, lng: 77.1025 },
-  { lat: 28.9103, lng: 77.1025 },
+  { lat: 28.91, lng: 77.1025, weight: 5 },
+  { lat: 28.9101, lng: 77.1025, weight: 3 },
+  { lat: 28.9102, lng: 77.1025, weight: 3 },
+  { lat: 28.9103, lng: 77.1025, weight: 3 },
 
   { lat: 28.7041, lng: 77.1025 },
   { lat: 28.7041, lng: 77.1025 },
@@ -63,16 +63,12 @@ export class HomePage extends Component {
     console.log(this.state);
   };
 
-  togglePanel = () => {
-    var panel = document.getElementById("panel");
-    console.log(panel);
-    // panel.style.display === 'block' ? panel.style.display === 'none' : panel.style.display === ' block'
-  };
-
   render() {
     return (
       <div>
+        <Header />
         <Map
+        maxZoom={12}
           google={this.props.google}
           className="map"
           initialCenter={{
@@ -80,8 +76,6 @@ export class HomePage extends Component {
             lng: 77.1025,
           }}
           zoom={10}
-          // style={{ zIndex: -1 }}
-          onClick={this.onMapClicked}
         >
           <HeatMap
             gradient={gradient}
@@ -91,29 +85,57 @@ export class HomePage extends Component {
             radius={20}
           />
         </Map>
-        <div
-          // onClick={() => this.togglePanel()}
-          className="Search"
-        >
-          <i class="fa fa-search" aria-hidden="true"></i>
+        <div className="Search">
+          <Link
+            className='link'
+            to={{
+              pathname: "/Search",
+              state: {
+                searchComponent: "Search",
+              },
+            }}
+          >
+            <i className="fa fa-search" aria-hidden="true"></i>
+          </Link>
         </div>
-        <div
-          // onClick={() => this.togglePanel()}
-          className="Search"
-        >
-          <i class="fas fa-chart-line"></i>
+        <div className="Search">
+          <Link
+            className='link'
+            to={{
+              pathname: "/Search",
+              state: {
+                searchComponent: "trending",
+              },
+            }}
+          >
+            <i className="fas fa-chart-line"></i>
+          </Link>
         </div>
-        <div
-          // onClick={() => this.togglePanel()}
-          className="Search"
-        >
-          <i class="fas fa-film"></i>
+        <div className="Search">
+          <Link
+            className='link'
+            to={{
+              pathname: "/Search",
+              state: {
+                searchComponent: "entertainment",
+              },
+            }}
+          >
+            <i className="fas fa-film"></i>
+          </Link>
         </div>
-        <div
-          // onClick={() => this.togglePanel()}
-          className="Search"
-        >
-          <i class="fas fa-map-marked-alt"></i>
+        <div className="Search">
+          <Link
+            className='link'
+            to={{
+              pathname: "/Search",
+              state: {
+                searchComponent: "travel",
+              },
+            }}
+          >
+            <i className="fas fa-map-marked-alt"></i>
+          </Link>
         </div>
         {/* <div className="container-fluid p-0 m-0 panel" id="panel">
           <div className="row m-0">
