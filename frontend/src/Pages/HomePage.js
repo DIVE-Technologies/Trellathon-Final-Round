@@ -22,20 +22,20 @@ const gradient = [
 ];
 
 const data = [
-  { lat: 28.70, lng: 77.10 },
-  { lat: 28.70, lng: 77.10 },
-  { lat: 28.70, lng: 77.10 },
-  { lat: 28.70, lng: 77.10 },
+  { lat: 28.7, lng: 77.1 },
+  { lat: 28.7, lng: 77.1 },
+  { lat: 28.7, lng: 77.1 },
+  { lat: 28.7, lng: 77.1 },
 
-  { lat: 28.70, lng: 77.10 },
-  { lat: 28.70, lng: 77.10 },
-  { lat: 28.70, lng: 77.10 },
-  { lat: 28.70, lng: 77.10 },
+  { lat: 28.7, lng: 77.1 },
+  { lat: 28.7, lng: 77.1 },
+  { lat: 28.7, lng: 77.1 },
+  { lat: 28.7, lng: 77.1 },
 
-  { lat: 23.70, lng: 77.10 },
-  { lat: 23.70, lng: 77.10 },
-  { lat: 23.70, lng: 77.10 },
-  { lat: 23.70, lng: 77.10 },
+  { lat: 23.7, lng: 77.1 },
+  { lat: 23.7, lng: 77.1 },
+  { lat: 23.7, lng: 77.1 },
+  { lat: 23.7, lng: 77.1 },
 
   { lat: 28.91, lng: 77.1025, weight: 5 },
   { lat: 28.9101, lng: 77.1025, weight: 3 },
@@ -68,7 +68,7 @@ export class HomePage extends Component {
       <div>
         <Header />
         <Map
-        maxZoom={12}
+          maxZoom={12}
           google={this.props.google}
           className="map"
           initialCenter={{
@@ -87,7 +87,7 @@ export class HomePage extends Component {
         </Map>
         <div className="Search">
           <Link
-            className='link'
+            className="link"
             to={{
               pathname: "/Search",
               state: {
@@ -100,7 +100,7 @@ export class HomePage extends Component {
         </div>
         <div className="Search">
           <Link
-            className='link'
+            className="link"
             to={{
               pathname: "/Search",
               state: {
@@ -113,7 +113,7 @@ export class HomePage extends Component {
         </div>
         <div className="Search">
           <Link
-            className='link'
+            className="link"
             to={{
               pathname: "/Search",
               state: {
@@ -126,7 +126,7 @@ export class HomePage extends Component {
         </div>
         <div className="Search">
           <Link
-            className='link'
+            className="link"
             to={{
               pathname: "/Search",
               state: {

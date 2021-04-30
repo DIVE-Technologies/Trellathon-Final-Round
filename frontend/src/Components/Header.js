@@ -5,9 +5,15 @@ import profileImage from "../assets/profileImage.png";
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand mr-5" href="#">
+      <Link
+        className="link navbar-brand"
+        style={{ color: "black" }}
+        to={{
+          pathname: "/Home",
+        }}
+      >
         Trell
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -30,7 +36,7 @@ const Header = () => {
               className="link"
               style={{ color: "black" }}
               to={{
-                pathname: "/Hme",
+                pathname: "/Home",
               }}
             >
               Home
