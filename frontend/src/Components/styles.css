@@ -24,6 +24,20 @@
     display: flex !important;
     justify-content: center !important;
     text-align: center !important;
+    margin: 10px;
+}
+
+.videoPlayer:hover {
+    box-shadow: 0 0 16px gray;
+}
+
+.videoContainer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .map {

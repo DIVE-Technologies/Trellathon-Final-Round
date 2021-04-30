@@ -12,6 +12,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-video-js-player": "^1.1.1",
+    "reactjs-popup": "^2.0.4",
     "video-react": "^0.14.1",
     "web-vitals": "^1.1.1"
   },

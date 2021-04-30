@@ -1,4 +1,3 @@
-import GoogleApiWrapper from './Pages/HomePage';
 import { BrowserRouter } from "react-router-dom";
 import Routes from './Routes/Routes';
 

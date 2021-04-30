@@ -18,31 +18,30 @@ class Search extends Component {
   };
 
   getVideos() {
-      for(var i=0;i<10;++i)
-        <ShowVideo />
+    for (var i = 0; i < 10; ++i) return <ShowVideo />;
   }
 
   // componentDidMount() {
   //     alert(this.props.location.state.searchComponent)
   // }
-  
+
   render() {
     return (
       <div>
         <Header />
         <div className="container">
-          <div className="row">
+          <div className="row mb-4">
             <div className="col-12 d-flex justify-content-center">
               <input
                 type="text"
                 onChange={(e) => this.handleInput(e.target.value)}
                 placeholder="Search"
-                className='inputField'
+                className="inputField"
               />
             </div>
           </div>
           <div className="row">
-            <div className="col-12 d-flex justify-content-center">
+            <div className="col-12 videoContainer">
               {this.getVideos()}
             </div>
           </div>

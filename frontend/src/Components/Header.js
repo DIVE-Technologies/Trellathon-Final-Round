@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import profileImage from "../assets/profileImage.png";
 
 const Header = () => {
   return (
@@ -56,23 +55,6 @@ const Header = () => {
               Trending
             </Link>
           </li>
-          {/* <li className="nav-item dropdown">
-            <img
-              src={profileImage}
-            />
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
-                Action
-              </a>
-              <a className="dropdown-item" href="#">
-                Another action
-              </a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-            </div>
-          </li> */}
         </ul>
       </div>
     </nav>

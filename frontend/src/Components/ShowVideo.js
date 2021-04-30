@@ -1,14 +1,31 @@
 import VideoPlayer from "react-video-js-player";
 import { Component } from "react";
 import './styles.css'
+import Poster from '../assets/images/Poster.png'
+import 'reactjs-popup/dist/index.css';
+
+const data = [
+  {
+    index: 1,
+    url: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
+    poster: {Poster}
+  },
+  {
+    index: 2,
+    url: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
+    poster: {Poster}
+  },
+]
 
 class ShowVideo extends Component {
   render() {
     return (
-      <VideoPlayer className='videoPlayer'
-      poster='https://images.unsplash.com/photo-1619694773412-64dd5bb9159d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80'
-      src='https://media.w3.org/2010/05/sintel/trailer_hd.mp4'
+      data.map(video => 
+      <VideoPlayer key={video.index} className='videoPlayer'
+      src={video.url}
+      poster={video.poster}
       />
+      )
     );
   }
 }
